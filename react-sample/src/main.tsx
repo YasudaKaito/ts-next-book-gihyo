@@ -12,12 +12,13 @@ import ReactDOM from 'react-dom/client'
 // import { Parent } from './components/MemoSampleCallback'
 // import { Parent } from './components/UseCallbackSample'
 // import { UseMemoSample } from './components/UseMemoSample'
-import { Clock } from './components/Clock'
+// import { Clock } from './components/Clock'
+import { Parent } from './components/UseContextSample'
 
 import './index.css'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   // <React.StrictMode>
-  <Clock />
+  <Parent />
   // </React.StrictMode>
 )

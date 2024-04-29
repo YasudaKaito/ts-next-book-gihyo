@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useLayoutEffect } from 'react'
 
 // 1秒
 const UPDATE_CYCLE = 1000
@@ -45,15 +45,22 @@ export const Clock = () => {
   // localstorageから値を読み込むための副作用
   // <React.StrictMode>をオフにしないと、2回呼び出しされてしまう
   // https://qiita.com/toy4you/items/fd4e051e3965277070cb
-  useEffect(() => {
+  // useEffect(() => {
+  //   const savedLocale = localStorage.getItem(KEY_LOCALE)
+  //   console.log('savedLocale', savedLocale)
+  //   if (savedLocale !== null) {
+  //     const value = getLocaleFromString(savedLocale)
+  //     console.log('value', value)
+  //     setLocale(value)
+  //   }
+  //   // 初回のレンダリング時にのみ実行される
+  // }, [])
+
+  useLayoutEffect(() => {
     const savedLocale = localStorage.getItem(KEY_LOCALE)
-    console.log('savedLocale', savedLocale)
     if (savedLocale !== null) {
-      const value = getLocaleFromString(savedLocale)
-      console.log('value', value)
-      setLocale(value)
+      setLocale(getLocaleFromString(savedLocale))
     }
-    // 初回のレンダリング時にのみ実行される
   }, [])
 
   // locale変化時に、localstorageに保存する
