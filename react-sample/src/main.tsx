@@ -5,12 +5,14 @@ import ReactDOM from 'react-dom/client'
 // import Name from './components/Name'
 // import Message from './components/Message'
 // import Parent from './components/ContainerSample'
-import Page from './components/ContextSample'
+// import Page from './components/ContextSample'
+// import Counter from './components/UseStateSample'
+import CounterReducer from './components/UseReducerSample'
 
 import './index.css'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <Page />
+    <CounterReducer initialValue={10} />
   </React.StrictMode>
 )
