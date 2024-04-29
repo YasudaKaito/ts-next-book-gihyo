@@ -10,12 +10,13 @@ import ReactDOM from 'react-dom/client'
 // import CounterReducer from './components/UseReducerSample'
 // import { Parent } from './components/MemoSample'
 // import { Parent } from './components/MemoSampleCallback'
-import { Parent } from './components/UseCallbackSample'
+// import { Parent } from './components/UseCallbackSample'
+import { UseMemoSample } from './components/UseMemoSample'
 
 import './index.css'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <Parent />
+    <UseMemoSample />
   </React.StrictMode>
 )
