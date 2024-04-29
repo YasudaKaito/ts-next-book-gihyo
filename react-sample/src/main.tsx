@@ -1,4 +1,4 @@
-import React from 'react'
+// import React from 'react'
 import ReactDOM from 'react-dom/client'
 // import App from './App.tsx'
 // import Hello from './components/Hello'
@@ -11,12 +11,13 @@ import ReactDOM from 'react-dom/client'
 // import { Parent } from './components/MemoSample'
 // import { Parent } from './components/MemoSampleCallback'
 // import { Parent } from './components/UseCallbackSample'
-import { UseMemoSample } from './components/UseMemoSample'
+// import { UseMemoSample } from './components/UseMemoSample'
+import { Clock } from './components/Clock'
 
 import './index.css'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
-  <React.StrictMode>
-    <UseMemoSample />
-  </React.StrictMode>
+  // <React.StrictMode>
+  <Clock />
+  // </React.StrictMode>
 )
