@@ -13,7 +13,9 @@ import ReactDOM from 'react-dom/client'
 // import { Parent } from './components/UseCallbackSample'
 // import { UseMemoSample } from './components/UseMemoSample'
 // import { Clock } from './components/Clock'
-import { Parent } from './components/UseContextSample'
+// import { Parent } from './components/UseContextSample'
+// import { ImageUploader } from './components/UseRefSample'
+import { Parent } from './components/UseImperativeHandleSample'
 
 import './index.css'
 
