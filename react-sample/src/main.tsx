@@ -15,12 +15,13 @@ import ReactDOM from 'react-dom/client'
 // import { Clock } from './components/Clock'
 // import { Parent } from './components/UseContextSample'
 // import { ImageUploader } from './components/UseRefSample'
-import { Parent } from './components/UseImperativeHandleSample'
+// import { Parent } from './components/UseImperativeHandleSample'
+import { Input } from './components/CustomHookSample'
 
 import './index.css'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   // <React.StrictMode>
-  <Parent />
+  <Input />
   // </React.StrictMode>
 )
