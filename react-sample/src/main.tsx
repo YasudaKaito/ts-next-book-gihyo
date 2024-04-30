@@ -16,12 +16,13 @@ import ReactDOM from 'react-dom/client'
 // import { Parent } from './components/UseContextSample'
 // import { ImageUploader } from './components/UseRefSample'
 // import { Parent } from './components/UseImperativeHandleSample'
-import { Input } from './components/CustomHookSample'
+// import { Input } from './components/ch3/CustomHookSample'
+import { CountButton } from './components/ch4/CountButton'
 
 import './index.css'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   // <React.StrictMode>
-  <Input />
+  <CountButton label="カウントボタン" maximum={5} />
   // </React.StrictMode>
 )
