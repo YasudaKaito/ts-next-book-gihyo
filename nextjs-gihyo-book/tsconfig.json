@@ -15,7 +15,8 @@
     "paths": {
       "@/*": ["./src/*"]
     },
-    "baseUrl": "src"
+    "baseUrl": "src",
+    "noErrorTruncation": true
   },
   "include": [
     "next-env.d.ts",

@@ -5,6 +5,6 @@ const letterSpacings = [
   '0.09px',
   '0.1px',
   '0.1px',
-]
+] as const
 
 export default letterSpacings
