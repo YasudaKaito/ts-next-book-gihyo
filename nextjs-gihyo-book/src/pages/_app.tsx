@@ -1,7 +1,8 @@
 // import "@/styles/globals.css";
 import type { AppProps } from 'next/app'
 import Head from 'next/head'
-import { createGlobalStyle } from 'styled-components'
+import { createGlobalStyle, ThemeProvider } from 'styled-components'
+import { theme } from 'themes'
 
 const GrobalStyle = createGlobalStyle`
 html,
@@ -42,7 +43,9 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
         <meta property="og:type" content="website" />
       </Head>
       <GrobalStyle />
-      <Component {...pageProps} />
+      <ThemeProvider theme={theme}>
+        <Component {...pageProps} />
+      </ThemeProvider>
     </>
   )
 }
