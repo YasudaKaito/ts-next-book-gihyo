@@ -11,37 +11,37 @@ export default {
       control: { type: 'text' },
       description: '画像URL',
       table: {
-        type: { summary: 'string' }
-      }
+        type: { summary: 'string' },
+      },
     },
     alt: {
       control: { type: 'text' },
       description: '代替テキスト',
       table: {
-        type: { summary: 'string' }
-      }
+        type: { summary: 'string' },
+      },
     },
     height: {
       control: { type: 'number' },
       description: '縦幅',
       table: {
-        type: { summary: 'number' }
-      }
+        type: { summary: 'number' },
+      },
     },
     width: {
       control: { type: 'number' },
       description: '横幅',
       table: {
-        type: { summary: 'number' }
-      }
+        type: { summary: 'number' },
+      },
     },
     onRemove: {
       description: '削除ボタンを押した時のイベントハンドラ',
       table: {
-        type: { summary: 'function' }
-      }
-    }
-  }
+        type: { summary: 'function' },
+      },
+    },
+  },
 } as Meta<typeof ImagePreview>
 
 const Container = styled.div`
@@ -69,7 +69,7 @@ const Template: StoryFn<typeof ImagePreview> = (args) => {
       if (index === -1) {
         newImages.push({
           file: f,
-          src: URL.createObjectURL(f)
+          src: URL.createObjectURL(f),
         })
       }
     }

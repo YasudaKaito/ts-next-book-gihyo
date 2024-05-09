@@ -4,7 +4,7 @@ import styled, { css } from 'styled-components'
  * テキストインプット
  */
 const Input = styled.input<{ hasError?: boolean; hasBorder?: boolean }>`
-  color: ${({ theme }) => theme.colors.inputText};
+  color: ${({ theme }) => theme.colors.primary};
   ${({ theme, hasBorder, hasError }) => {
     if (hasBorder) {
       return css`
@@ -27,7 +27,7 @@ const Input = styled.input<{ hasError?: boolean; hasBorder?: boolean }>`
   line-height: 19px;
 
   &::placeholder {
-    color: ${({ theme }) => theme.colors.placeholder};
+    color: ${({ theme }) => theme.colors.primary};
   }
 
   &::-webkit-outer-spin-button,

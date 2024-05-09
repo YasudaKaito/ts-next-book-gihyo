@@ -1,11 +1,11 @@
-import React, { useEffect } from 'react'
 import { Meta } from '@storybook/react'
+import React, { useEffect } from 'react'
 import Header from './index'
+import { AuthContextProvider } from 'contexts/AuthContext'
 import {
   ShoppingCartContextProvider,
-  useShoppingCartContext
+  useShoppingCartContext,
 } from 'contexts/ShoppingCartContext'
-import { AuthContextProvider } from 'contexts/AuthContext'
 import type { User } from 'types'
 
 export default { title: 'organisms/Header' } as Meta<typeof Header>
@@ -19,7 +19,7 @@ export const Login = () => {
     displayName: 'Taketo Yoshida',
     email: 'test@example.com',
     profileImageUrl: '/images/sample/1.jpg',
-    description: ''
+    description: '',
   }
 
   const ChildComponent = () => {
@@ -35,7 +35,7 @@ export const Login = () => {
         blurDataUrl: '',
         price: 1000,
         condition: 'used',
-        owner: authUser
+        owner: authUser,
       })
     }, [])
 

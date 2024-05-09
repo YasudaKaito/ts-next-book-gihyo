@@ -26,7 +26,7 @@ const CardProduct = ({
   title,
   price,
   onBuyButtonClick,
-  onRemoveButtonClick
+  onRemoveButtonClick,
 }: CardProductProps) => {
   return (
     <Flex justifyContent="space-between">

@@ -6,7 +6,7 @@ import {
   Color,
   FontSize,
   LetterSpacing,
-  LineHeight
+  LineHeight,
 } from 'utils/styles'
 
 export type TextVariant =
@@ -51,33 +51,33 @@ const variants = {
     // 文字間隔
     letterSpacing: 0,
     // 行間隔
-    lineHeight: 0
+    lineHeight: 0,
   },
   small: {
     fontSize: 'small',
     letterSpacing: 1,
-    lineHeight: 1
+    lineHeight: 1,
   },
   medium: {
     fontSize: 'medium',
     letterSpacing: 2,
-    lineHeight: 2
+    lineHeight: 2,
   },
   mediumLarge: {
     fontSize: 'mediumLarge',
     letterSpacing: 3,
-    lineHeight: 3
+    lineHeight: 3,
   },
   large: {
     fontSize: 'large',
     letterSpacing: 4,
-    lineHeight: 4
+    lineHeight: 4,
   },
   extraLarge: {
     fontSize: 'extraLarge',
     letterSpacing: 5,
-    lineHeight: 5
-  }
+    lineHeight: 5,
+  },
 } as const
 
 /**
@@ -93,11 +93,11 @@ const Text = styled.span<TextProps>`
         styles.push(toPropValue('font-size', variants[variant].fontSize, theme))
       !letterSpacing &&
         styles.push(
-          toPropValue('letter-spacing', variants[variant].letterSpacing, theme)
+          toPropValue('letter-spacing', variants[variant].letterSpacing, theme),
         )
       !lineHeight &&
         styles.push(
-          toPropValue('line-height', variants[variant].lineHeight, theme)
+          toPropValue('line-height', variants[variant].lineHeight, theme),
         )
       return styles.join('\n')
     }
@@ -129,7 +129,7 @@ const Text = styled.span<TextProps>`
 
 Text.defaultProps = {
   variant: 'medium',
-  color: 'text'
+  color: 'text',
 }
 
 export default Text

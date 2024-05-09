@@ -2,6 +2,7 @@ import { Meta, StoryFn } from '@storybook/react'
 import { useState } from 'react'
 import FilterGroup from './index'
 
+// @ts-expect-error
 export default {
   title: 'Molecules/FilterGroup',
   argTypes: {
@@ -9,23 +10,23 @@ export default {
       control: { type: 'text' },
       description: 'タイトル',
       table: {
-        type: { summary: 'string' }
-      }
+        type: { summary: 'string' },
+      },
     },
     items: {
       control: { type: 'array' },
       description: 'オプション',
       table: {
-        type: { summary: 'array' }
-      }
+        type: { summary: 'array' },
+      },
     },
     onChange: {
       description: 'onChangeイベントハンドラ',
       table: {
-        type: { summary: 'function' }
-      }
-    }
-  }
+        type: { summary: 'function' },
+      },
+    },
+  },
 } as Meta<typeof FilterGroup>
 
 const Template: StoryFn<typeof FilterGroup> = (args) => {
@@ -44,6 +45,6 @@ Standard.args = {
   items: [
     { label: 'Clothes', name: 'clothes' },
     { label: 'Books', name: 'books' },
-    { label: 'Shoes', name: 'shoes' }
-  ]
+    { label: 'Shoes', name: 'shoes' },
+  ],
 }

@@ -11,7 +11,7 @@ type AuthContextType = {
   signout: () => Promise<void>
   mutate: (
     data?: User | Promise<User>,
-    shouldRevalidate?: boolean
+    shouldRevalidate?: boolean,
   ) => Promise<User | undefined>
 }
 
@@ -25,7 +25,7 @@ const AuthContext = React.createContext<AuthContextType>({
   isLoading: false,
   signin: async () => Promise.resolve(),
   signout: async () => Promise.resolve(),
-  mutate: async () => Promise.resolve(undefined)
+  mutate: async () => Promise.resolve(undefined),
 })
 
 export const useAuthContext = () => useContext(AuthContext)
@@ -35,10 +35,10 @@ export const AuthContextProvider = ({
   context,
   // ユニットテストやstorybook用. 本番ではSWRで取得したユーザデータを渡す
   authUser,
-  children
+  children,
 }: React.PropsWithChildren<AuthContextProviderProps>) => {
   const { data, error, mutate } = useSWR<User>(
-    `${context.apiRootUrl.replace(/\/$/, '')}/users/me`
+    `${context.apiRootUrl.replace(/\/$/, '')}/users/me`,
   )
   // NOTE: useSWRの戻り値にisLoadingがあるがなぜそれを使わないのかは不明、書籍出版時はなかったのか
   const isLoading = !data && !error
@@ -63,7 +63,7 @@ export const AuthContextProvider = ({
         isLoading,
         signin: signinInternal,
         signout: signoutInternal,
-        mutate
+        mutate,
       }}
     >
       {children}

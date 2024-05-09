@@ -1,12 +1,12 @@
 import React, { useRef, useState, useCallback, useEffect } from 'react'
 import styled from 'styled-components'
-import Flex from 'components/layout/Flex'
-import Text from 'components/atoms/Text'
-// MUIのアイコン
 import {
   CheckBoxOutlineBlankIcon,
-  CheckBoxIcon
+  CheckBoxIcon,
 } from 'components/atoms/IconButton'
+import Text from 'components/atoms/Text'
+import Flex from 'components/layout/Flex'
+// MUIのアイコン
 
 // https://stackoverflow.com/questions/73827055/checked-doesnt-exist-on-htmlattributeshtmlinputelement
 export interface CheckboxProps
@@ -45,7 +45,7 @@ const CheckBox = (props: CheckboxProps) => {
       ref.current?.click()
       setIsChecked((isChecked) => !isChecked)
     },
-    [ref, setIsChecked]
+    [ref, setIsChecked],
   )
 
   useEffect(() => {

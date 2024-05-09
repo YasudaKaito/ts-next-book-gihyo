@@ -16,7 +16,7 @@ type ShopReducerAction =
 
 const addProductToCart = (product: Product, state: Product[]) => [
   ...state,
-  product
+  product,
 ]
 
 const removeProductFromCart = (productId: number, state: Product[]) => {
@@ -27,7 +27,7 @@ const removeProductFromCart = (productId: number, state: Product[]) => {
 
 export const shopReducer: React.Reducer<Product[], ShopReducerAction> = (
   state: Product[],
-  action: ShopReducerAction
+  action: ShopReducerAction,
 ) => {
   switch (action.type) {
     case ADD_PRODUCT:

@@ -111,6 +111,7 @@ const ProductCard = ({
             objectFit="cover"
             placeholder="blur"
             blurDataURL={blurDataUrl}
+            alt="dummy"
           />
         )}
         {!blurDataUrl && (
@@ -121,6 +122,7 @@ const ProductCard = ({
             containerWidth={size}
             containerHeight={size}
             objectFit="cover"
+            alt="dummy"
           />
         )}
       </ProductCardImageContainer>

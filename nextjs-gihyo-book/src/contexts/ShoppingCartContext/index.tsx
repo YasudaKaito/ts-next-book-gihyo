@@ -11,7 +11,7 @@ type ShoppingCartContextType = {
 const ShoppingCartContext = React.createContext<ShoppingCartContextType>({
   cart: [],
   addProductToCart: () => {},
-  removeProductFromCart: () => {}
+  removeProductFromCart: () => {},
 })
 
 export const useShoppingCartContext = () => useContext(ShoppingCartContext)
@@ -21,7 +21,7 @@ interface ShoppingCartContextProviderProps {
 }
 
 export const ShoppingCartContextProvider = ({
-  children
+  children,
 }: ShoppingCartContextProviderProps) => {
   const products: Product[] = []
   const [cartState, dispatch] = useReducer(shopReducer, products)
@@ -38,7 +38,7 @@ export const ShoppingCartContextProvider = ({
       value={{
         cart: cartState,
         addProductToCart,
-        removeProductFromCart
+        removeProductFromCart,
       }}
     >
       {children}

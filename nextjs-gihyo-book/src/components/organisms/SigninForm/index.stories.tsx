@@ -7,10 +7,10 @@ export default {
     onSignin: {
       description: 'サインインボタンを押した時のイベントハンドラ',
       table: {
-        type: { summary: 'function' }
-      }
-    }
-  }
+        type: { summary: 'function' },
+      },
+    },
+  },
 } as Meta<typeof SigninForm>
 
 const Template: StoryFn<typeof SigninForm> = (args) => <SigninForm {...args} />

@@ -22,14 +22,22 @@ type SelfPosition =
   | 'self-end'
   | 'self-start'
   | 'start'
+  | string
 
-type ContentPosition = 'center' | 'end' | 'flex-start' | 'flex-end' | 'start'
+type ContentPosition =
+  | 'center'
+  | 'end'
+  | 'flex-start'
+  | 'flex-end'
+  | 'start'
+  | string
 
 type ContentDistribution =
   | 'space-around'
   | 'space-between'
   | 'space-evenly'
   | 'stretch'
+  | string
 
 type CSSPropertyGlobals =
   | '-moz-initial'
@@ -37,6 +45,7 @@ type CSSPropertyGlobals =
   | 'initial'
   | 'revert'
   | 'unset'
+  | string
 
 export type CSSPropertyAlignItems =
   | CSSPropertyGlobals
@@ -44,8 +53,7 @@ export type CSSPropertyAlignItems =
   | 'baseline'
   | 'normal'
   | 'stretch'
-  // コードの自動補完
-  | (string & {})
+  | string
 
 export type CSSPropertyAlignContent =
   | CSSPropertyGlobals
@@ -57,7 +65,7 @@ export type CSSPropertyAlignContent =
   | 'start'
   | 'baseline'
   | 'normal'
-  | (string & {})
+  | string
 
 export type CSSPropertyJustifyItems =
   | CSSPropertyGlobals
@@ -68,7 +76,7 @@ export type CSSPropertyJustifyItems =
   | 'normal'
   | 'right'
   | 'stretch'
-  | (string & {})
+  | string
 
 export type CSSPropertyJustifyContent =
   | CSSPropertyGlobals
@@ -77,13 +85,14 @@ export type CSSPropertyJustifyContent =
   | 'left'
   | 'normal'
   | 'right'
-  | (string & {})
+  | string
 
 export type CSSPropertyFlexWrap =
   | CSSPropertyGlobals
   | 'nowrap'
   | 'wrap'
   | 'wrap-reverse'
+  | string
 
 export type CSSPropertyFlexDirection =
   | CSSPropertyGlobals
@@ -91,6 +100,7 @@ export type CSSPropertyFlexDirection =
   | 'column-reverse'
   | 'row'
   | 'row-reverse'
+  | string
 
 export type CSSPropertyJustifySelf =
   | CSSPropertyGlobals
@@ -101,7 +111,7 @@ export type CSSPropertyJustifySelf =
   | 'normal'
   | 'right'
   | 'stretch'
-  | (string & {})
+  | string
 
 export type CSSPropertyAlignSelf =
   | CSSPropertyGlobals
@@ -110,25 +120,22 @@ export type CSSPropertyAlignSelf =
   | 'baseline'
   | 'normal'
   | 'stretch'
-  | (string & {})
+  | string
 
 /**
  * Grid
  */
-type GridLine = 'auto' | (string & {})
+type GridLine = 'auto' | string
 
-export type CSSPropertyGridColumn =
-  | CSSPropertyGlobals
-  | GridLine
-  | (string & {})
+export type CSSPropertyGridColumn = CSSPropertyGlobals | GridLine | string
 
-export type CSSPropertyGridRow = CSSPropertyGlobals | GridLine | (string & {})
+export type CSSPropertyGridRow = CSSPropertyGlobals | GridLine | string
 
 export type CSSPropertyGridAutoFlow =
   | CSSPropertyGlobals
   | 'column'
   | 'dense'
   | 'row'
-  | (string & {})
+  | string
 
-export type CSSPropertyGridArea = CSSPropertyGlobals | GridLine | (string & {})
+export type CSSPropertyGridArea = CSSPropertyGlobals | GridLine

@@ -1,12 +1,12 @@
 import { Meta } from '@storybook/react'
 import GlobalSpinner from './index'
-import GlobalSpinnerContextProvider, {
-  useGlobalSpinnerActionsContext
-} from 'contexts/GlobalSpinnerContext'
 import Button from 'components/atoms/Button'
+import GlobalSpinnerContextProvider, {
+  useGlobalSpinnerActionsContext,
+} from 'contexts/GlobalSpinnerContext'
 
 export default {
-  title: 'organisms/GlobalSpinner'
+  title: 'organisms/GlobalSpinner',
 } as Meta<typeof GlobalSpinner>
 
 export const WithContextProvider = () => {

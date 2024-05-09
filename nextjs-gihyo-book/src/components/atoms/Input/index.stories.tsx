@@ -8,26 +8,26 @@ export default {
       control: { type: 'text' },
       description: 'プレースホルダー',
       table: {
-        type: { summary: 'string' }
-      }
+        type: { summary: 'string' },
+      },
     },
     hasBorder: {
       control: { type: 'boolean' },
       defaultValue: true,
       description: 'ボーダーフラグ',
       table: {
-        type: { summary: 'boolean' }
-      }
+        type: { summary: 'boolean' },
+      },
     },
     hasError: {
       control: { type: 'boolean' },
       defaultValue: false,
       description: 'バリデーションエラーフラグ',
       table: {
-        type: { summary: 'boolean' }
-      }
-    }
-  }
+        type: { summary: 'boolean' },
+      },
+    },
+  },
 } as Meta<typeof Input>
 
 const Template: StoryFn<typeof Input> = (args) => <Input {...args} />

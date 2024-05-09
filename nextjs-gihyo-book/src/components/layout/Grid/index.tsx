@@ -5,7 +5,7 @@ import type {
   CSSPropertyGridAutoFlow,
   CSSPropertyGridColumn,
   CSSPropertyGridRow,
-  Responsive
+  Responsive,
 } from 'types/styles'
 import { toPropValue } from 'utils/styles'
 
@@ -42,7 +42,7 @@ const Grid = styled(Box)<GridProps>`
     toPropValue(
       'grid-template-columns',
       props.gridTemplateColumns,
-      props.theme
+      props.theme,
     )}
   ${(props) =>
     toPropValue('grid-template-rows', props.gridTemplateRows, props.theme)}
@@ -52,7 +52,7 @@ const Grid = styled(Box)<GridProps>`
 `
 
 Grid.defaultProps = {
-  display: 'grid'
+  display: 'grid',
 }
 
 export default Grid

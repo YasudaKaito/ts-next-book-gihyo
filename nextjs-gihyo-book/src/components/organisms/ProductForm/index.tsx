@@ -24,7 +24,7 @@ const ProductForm = ({ onProductSave }: ProductFormProps) => {
     register,
     handleSubmit,
     control,
-    formState: { errors }
+    formState: { errors },
   } = useForm<ProductFormData>()
 
   const onSubmit = (data: ProductFormData) => {
@@ -127,7 +127,7 @@ const ProductForm = ({ onProductSave }: ProductFormProps) => {
                 options={[
                   { value: 'shoes', label: 'シューズ' },
                   { value: 'clothes', label: 'トップス' },
-                  { value: 'book', label: '本' }
+                  { value: 'book', label: '本' },
                 ]}
                 hasError={!!error}
                 value={value}
@@ -157,7 +157,7 @@ const ProductForm = ({ onProductSave }: ProductFormProps) => {
               <Dropdown
                 options={[
                   { value: 'used', label: '中古' },
-                  { value: 'new', label: '新品' }
+                  { value: 'new', label: '新品' },
                 ]}
                 hasError={!!error}
                 value={value ?? 'used'}

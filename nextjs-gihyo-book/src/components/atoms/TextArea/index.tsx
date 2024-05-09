@@ -18,7 +18,7 @@ export interface TextAreaProps
 }
 
 const StyledTextArea = styled.textarea<{ hasError?: boolean }>`
-  color: ${({ theme }) => theme.colors.inputText};
+  color: ${({ theme }) => theme.colors.primary};
   border: 1px solid
     ${({ theme, hasError }) =>
       hasError ? theme.colors.danger : theme.colors.border};
@@ -34,7 +34,7 @@ const StyledTextArea = styled.textarea<{ hasError?: boolean }>`
   height: auto;
 
   &::placeholder {
-    color: ${({ theme }) => theme.colors.placeholder};
+    color: ${({ theme }) => theme.colors.primary};
   }
 `
 

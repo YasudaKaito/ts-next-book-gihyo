@@ -12,11 +12,11 @@ type LineHeightThemeKeys = keyof typeof theme.lineHeights
 
 // 各themeのキーの型
 // 配列の場合は整数または整数の文字列を想定
-export type Space = SpaceThemeKeys | (string & {})
-export type Color = ColorThemeKeys | (string & {})
-export type FontSize = FontSizeThemeKeys | (string & {})
-export type LetterSpacing = LetterSpacingThemeKeys | (string & {})
-export type LineHeight = LineHeightThemeKeys | (string & {})
+export type Space = SpaceThemeKeys | string
+export type Color = ColorThemeKeys | string
+export type FontSize = FontSizeThemeKeys | string
+export type LetterSpacing = LetterSpacingThemeKeys | string
+export type LineHeight = LineHeightThemeKeys | string
 
 // 各themeの値の型
 export type SpaceThemeValues = (typeof theme.space)[number]
@@ -31,7 +31,7 @@ const BREAKPOINTS = {
   sm: '640px',
   md: '768px',
   lg: '1024px',
-  xl: '1280px'
+  xl: '1280px',
 } as const
 
 /**
@@ -42,7 +42,7 @@ const BREAKPOINTS = {
 export function toPropValue<T>(
   propKey: string,
   prop?: Responsive<T>,
-  theme?: AppTheme
+  theme?: AppTheme,
 ) {
   if (prop === undefined) return undefined
   // プリミティブ値の場合
@@ -56,8 +56,8 @@ export function toPropValue<T>(
         `${propKey}: ${toThemeValueIfNeeded(
           propKey,
           prop[responsiveKey],
-          theme
-        )};`
+          theme,
+        )};`,
       )
     } else if (
       responsiveKey === 'sm' ||
@@ -70,7 +70,7 @@ export function toPropValue<T>(
       const style = `${propKey}: ${toThemeValueIfNeeded(
         propKey,
         prop[responsiveKey],
-        theme
+        theme,
       )};`
       result.push(`@media screen and (min-width: ${breakpoint}) {${style}}`)
     }
@@ -88,7 +88,7 @@ const SPACE_KEYS = new Set([
   'padding-top',
   'padding-left',
   'padding-bottom',
-  'padding-right'
+  'padding-right',
 ])
 const COLOR_KEYS = new Set(['color', 'background-color'])
 const FONT_SIZE_KEYS = new Set(['font-size'])
@@ -142,6 +142,7 @@ function toThemeValueIfNeeded<T>(propKey: string, value: T, theme?: AppTheme) {
   return value
 }
 
+// eslint-disable-next-line  @typescript-eslint/no-explicit-any
 function isResponsivePropType<T>(prop: any): prop is ResponsiveProp<T> {
   return (
     prop &&
@@ -154,6 +155,7 @@ function isResponsivePropType<T>(prop: any): prop is ResponsiveProp<T> {
 }
 
 /** propsが、theme.spaceの配列にインデクスアクセス可能な値かどうか判定 */
+// eslint-disable-next-line  @typescript-eslint/no-explicit-any
 function isSpaceThemeKeys(prop: any, theme: AppTheme): prop is SpaceThemeKeys {
   // themeの配列値を参照する際、
   // 配列に対するインデックスアクセス可能な値かを判定する
@@ -168,20 +170,23 @@ function isSpaceThemeKeys(prop: any, theme: AppTheme): prop is SpaceThemeKeys {
   return Object.keys(theme.space).filter((key) => key == prop).length > 0
 }
 
+// eslint-disable-next-line  @typescript-eslint/no-explicit-any
 function isColorThemeKeys(prop: any, theme: AppTheme): prop is ColorThemeKeys {
   return Object.keys(theme.colors).filter((key) => key == prop).length > 0
 }
 
 function isFontSizeThemeKeys(
+  // eslint-disable-next-line  @typescript-eslint/no-explicit-any
   prop: any,
-  theme: AppTheme
+  theme: AppTheme,
 ): prop is FontSizeThemeKeys {
   return Object.keys(theme.fontSizes).filter((key) => key == prop).length > 0
 }
 
 function isLetterSpacingThemeKeys(
+  // eslint-disable-next-line  @typescript-eslint/no-explicit-any
   prop: any,
-  theme: AppTheme
+  theme: AppTheme,
 ): prop is LetterSpacingThemeKeys {
   return (
     Object.keys(theme.letterSpacings).filter((key) => key == prop).length > 0
@@ -189,8 +194,9 @@ function isLetterSpacingThemeKeys(
 }
 
 function isLineHeightThemeKeys(
+  // eslint-disable-next-line  @typescript-eslint/no-explicit-any
   prop: any,
-  theme: AppTheme
+  theme: AppTheme,
 ): prop is LineHeightThemeKeys {
   return Object.keys(theme.lineHeights).filter((key) => key == prop).length > 0
 }

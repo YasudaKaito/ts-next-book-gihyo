@@ -11,7 +11,7 @@ export const useGlobalSpinnerContext = () => useContext(GlobalSpinnerContext)
 // スピナーの表示・非表示を変更する関数
 export const useGlobalSpinnerActionsContext = () =>
   useContext<React.Dispatch<React.SetStateAction<boolean>>>(
-    GlobalSpinnerActionsContext
+    GlobalSpinnerActionsContext,
   )
 
 interface GlobalSpinnerProviderProps {
@@ -19,7 +19,7 @@ interface GlobalSpinnerProviderProps {
 }
 
 const GlobalSpinnerContextProvider = ({
-  children
+  children,
 }: GlobalSpinnerProviderProps) => {
   const [isGlobalSpinnerOn, setGlobalSpinner] = useState(false)
 

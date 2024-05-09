@@ -9,11 +9,12 @@
     "plugin:@typescript-eslint/recommended",
     "plugin:import/recommended",
     "plugin:import/typescript",
-    "plugin:storybook/recommended",
-    "next/babel"
+    "plugin:storybook/recommended"
+    // "next/babel"
   ],
   "rules": {
     "react/react-in-jsx-scope": "off",
+    "import/no-named-as-default": 0,
     "import/order": [
       2,
       {
@@ -32,6 +33,7 @@
         "printWidth": 80,
         "tabWidth": 2
       }
-    ]
+    ],
+    "@typescript-eslint/ban-ts-comment": "off"
   }
 }

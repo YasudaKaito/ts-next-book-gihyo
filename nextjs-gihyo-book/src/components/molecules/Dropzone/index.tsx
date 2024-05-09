@@ -98,7 +98,7 @@ const Dropzone = (props: DropzoneProps) => {
     height = '200px',
     hasError,
     onDrop,
-    onChange
+    onChange,
   } = props
 
   const rootRef = useRef<HTMLDivElement>(null)
@@ -111,8 +111,8 @@ const Dropzone = (props: DropzoneProps) => {
     setIsFocused(false)
     const files = value.concat(
       getFilesFromEvent(e).filter((f) =>
-        acceptedFileTypes.includes(f.type as FileType)
-      )
+        acceptedFileTypes.includes(f.type as FileType),
+      ),
     )
     // 渡されたハンドラがあれば実行
     onDrop && onDrop(files)
@@ -127,12 +127,12 @@ const Dropzone = (props: DropzoneProps) => {
 
     const files = value.concat(
       getFilesFromEvent(e).filter((f) =>
-        acceptedFileTypes.includes(f.type as FileType)
-      )
+        acceptedFileTypes.includes(f.type as FileType),
+      ),
     )
     if (files.length === 0)
       return window.alert(
-        `次のファイルフォーマット以外は指定できません${acceptedFileTypes.join(',')}`
+        `次のファイルフォーマット以外は指定できません${acceptedFileTypes.join(',')}`,
       )
 
     onDrop && onDrop(files)
@@ -206,7 +206,7 @@ const Dropzone = (props: DropzoneProps) => {
 
 Dropzone.defaultProps = {
   acceptedFileTypes: ['image/png', 'image/jpeg', 'image/jpg', 'image/gif'],
-  hasError: false
+  hasError: false,
 }
 
 export default Dropzone

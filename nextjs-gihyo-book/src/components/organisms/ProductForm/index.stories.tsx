@@ -7,10 +7,10 @@ export default {
     onProductSave: {
       description: '出品ボタンを押した時のイベントハンドラ',
       table: {
-        type: { summary: 'function' }
-      }
-    }
-  }
+        type: { summary: 'function' },
+      },
+    },
+  },
 } as Meta<typeof ProductForm>
 
 const Template: StoryFn<typeof ProductForm> = (args) => (

@@ -8,17 +8,17 @@ export default {
       control: { type: 'text' },
       description: 'バッジのテキスト',
       table: {
-        type: { summary: 'string' }
-      }
+        type: { summary: 'string' },
+      },
     },
     backgroundColor: {
       control: { type: 'color' },
       description: 'バッジの色',
       table: {
-        type: { summary: 'string' }
-      }
-    }
-  }
+        type: { summary: 'string' },
+      },
+    },
+  },
 } as Meta<typeof Badge>
 
 const Template: StoryFn<typeof Badge> = (args) => <Badge {...args} />

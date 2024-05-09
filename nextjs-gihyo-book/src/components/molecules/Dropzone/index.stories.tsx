@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react'
 import { Meta, StoryFn } from '@storybook/react'
+import React, { useState, useEffect } from 'react'
 import Dropzone from './index'
 import Button from 'components/atoms/Button'
 import Box from 'components/layout/Box'
@@ -12,46 +12,46 @@ export default {
       control: { type: 'number' },
       description: '高さ',
       table: {
-        type: { summary: 'number' }
-      }
+        type: { summary: 'number' },
+      },
     },
     width: {
       control: { type: 'number' },
       description: '横幅',
       table: {
-        type: { summary: 'number' }
-      }
+        type: { summary: 'number' },
+      },
     },
     hasError: {
       control: { type: 'boolean' },
       defaultValue: false,
       description: 'バリデーションエラーフラグ',
       table: {
-        type: { summary: 'boolean' }
-      }
+        type: { summary: 'boolean' },
+      },
     },
     acceptedFileTypes: {
       options: {
         control: { type: 'array' },
         description: '受け付けるファイルタイプ',
         table: {
-          type: { summary: 'array' }
-        }
-      }
+          type: { summary: 'array' },
+        },
+      },
     },
     onDrop: {
       description: 'ファイルがドロップ入力された時のイベントハンドラ',
       table: {
-        type: { summary: 'function' }
-      }
+        type: { summary: 'function' },
+      },
     },
     onChange: {
       description: 'ファイルが入力された時のイベントハンドラ',
       table: {
-        type: { summary: 'function' }
-      }
-    }
-  }
+        type: { summary: 'function' },
+      },
+    },
+  },
 } as Meta<typeof Dropzone>
 
 const Template: StoryFn<typeof Dropzone> = (args) => {
@@ -109,5 +109,5 @@ WithControl.args = {
   height: 200,
   width: '100%',
   acceptedFileTypes: ['image/png', 'image/jpeg', 'image/jpg', 'image/gif'],
-  hasError: false
+  hasError: false,
 }

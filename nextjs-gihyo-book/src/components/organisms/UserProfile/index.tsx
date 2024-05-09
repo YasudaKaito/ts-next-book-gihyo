@@ -34,7 +34,7 @@ const UserProfile = ({
   username,
   profileImageUrl,
   numberOfProducts,
-  description
+  description,
 }: UserProfileProps) => {
   // const profileImageSize = variant === 'small' ? '100px' : '120px'
   const profileImageSize = variant === 'small' ? '100' : '120'

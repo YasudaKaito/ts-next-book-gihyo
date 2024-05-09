@@ -130,7 +130,7 @@ const Dropdown = (props: DropdownProps) => {
       }
       setIsOpenValue(false)
     },
-    [dropdownRef]
+    [dropdownRef],
   )
 
   // マウスダウンしたときにトグルする

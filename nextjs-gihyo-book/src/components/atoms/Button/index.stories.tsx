@@ -2,17 +2,17 @@ import { Meta, StoryFn } from '@storybook/react'
 import Button from './index'
 
 export default {
-	title: 'Atoms/Button',
+  title: 'Atoms/Button',
   argTypes: {
     variant: {
-			options: ['primary','secondary'],
-			control: {type: 'radio'},
-			defaultValue: 'primary',
-			description: 'ボタンのバリアント',
-			table: {
-				type: {summary: 'primary | secondary'},
-				defaultValue: { summary: 'primary'},
-			}
+      options: ['primary', 'secondary'],
+      control: { type: 'radio' },
+      defaultValue: 'primary',
+      description: 'ボタンのバリアント',
+      table: {
+        type: { summary: 'primary | secondary' },
+        defaultValue: { summary: 'primary' },
+      },
     },
     children: {
       control: { type: 'text' },
@@ -69,6 +69,6 @@ Secondary.args = {
 
 export const Disabled = Template.bind({})
 Disabled.args = {
-	disabled: true,
-	children: 'Disabled Button',
+  disabled: true,
+  children: 'Disabled Button',
 }

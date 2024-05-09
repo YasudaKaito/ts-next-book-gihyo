@@ -7,7 +7,7 @@ import {
   Space,
   FontSize,
   LetterSpacing,
-  LineHeight
+  LineHeight,
 } from 'utils/styles'
 
 // ボタンのバリアント
@@ -56,12 +56,12 @@ const variants = {
     border: 'none',
     pseudoClass: {
       hover: {
-        backgroundColor: 'primaryDark'
+        backgroundColor: 'primaryDark',
       },
       disabled: {
-        backgroundColor: 'primary'
-      }
-    }
+        backgroundColor: 'primary',
+      },
+    },
   },
   secondary: {
     color: 'white',
@@ -69,12 +69,12 @@ const variants = {
     border: 'none',
     pseudoClass: {
       hover: {
-        backgroundColor: 'secondaryDark'
+        backgroundColor: 'secondaryDark',
       },
       disabled: {
-        backgroundColor: 'secondary'
-      }
-    }
+        backgroundColor: 'secondary',
+      },
+    },
   },
   danger: {
     color: 'white',
@@ -82,13 +82,13 @@ const variants = {
     border: 'none',
     pseudoClass: {
       hover: {
-        backgroundColor: 'dangerDark'
+        backgroundColor: 'dangerDark',
       },
       disabled: {
-        backgroundColor: 'danger'
-      }
-    }
-  }
+        backgroundColor: 'danger',
+      },
+    },
+  },
 }
 
 /**
@@ -98,7 +98,6 @@ const variants = {
 const Button = styled.button<ButtonProps>`
   ${({ variant, color, backgroundColor, pseudoClass, theme }) => {
     if (variant && variants[variant]) {
-      const selectedVariant = variants[variant]
       const styles = []
       // &&で擬似的なif分岐になっている
       !color &&
@@ -108,8 +107,8 @@ const Button = styled.button<ButtonProps>`
           toPropValue(
             'background-color',
             variants[variant].backgroundColor,
-            theme
-          )
+            theme,
+          ),
         )
       !pseudoClass &&
         styles.push(
@@ -117,9 +116,9 @@ const Button = styled.button<ButtonProps>`
               ${toPropValue(
                 'background-color',
                 variants[variant].pseudoClass.hover.backgroundColor,
-                theme
+                theme,
               )}
-            }`.replaceAll('\n', '')
+            }`.replaceAll('\n', ''),
         )
       !pseudoClass &&
         styles.push(
@@ -127,9 +126,9 @@ const Button = styled.button<ButtonProps>`
               ${toPropValue(
                 'background-color',
                 variants[variant].pseudoClass.disabled.backgroundColor,
-                theme
+                theme,
               )}
-            }`.replaceAll('\n', '')
+            }`.replaceAll('\n', ''),
         )
       return styles.join('\n')
     }
@@ -161,14 +160,14 @@ const Button = styled.button<ButtonProps>`
     ${(props) =>
       toPropValue(
         'background-color',
-        props?.pseudoClass?.hover?.backgroundColor
+        props?.pseudoClass?.hover?.backgroundColor,
       )}
   }
   &:disabled {
     ${(props) =>
       toPropValue(
         'background-color',
-        props?.pseudoClass?.disabled?.backgroundColor
+        props?.pseudoClass?.disabled?.backgroundColor,
       )}
   }
   cursor: pointer;
@@ -189,7 +188,7 @@ Button.defaultProps = {
   display: 'inline-block',
   textAlign: 'center',
   lineHeight: 'inherit',
-  fontSize: 'inherit'
+  fontSize: 'inherit',
 }
 
 export default Button

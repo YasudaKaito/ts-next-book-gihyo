@@ -8,23 +8,23 @@ export default {
       control: { type: 'text' },
       description: 'ラベル',
       table: {
-        type: { summary: 'string' }
-      }
+        type: { summary: 'string' },
+      },
     },
     checked: {
       control: { type: 'boolean' },
       description: 'チェック',
       table: {
-        type: { summary: 'number' }
-      }
+        type: { summary: 'number' },
+      },
     },
     onChange: {
       description: '値が変化した時のイベントハンドラ',
       table: {
-        type: { summary: 'function' }
-      }
-    }
-  }
+        type: { summary: 'function' },
+      },
+    },
+  },
 } as Meta<typeof CheckBox>
 
 const Template: StoryFn<typeof CheckBox> = (args) => <CheckBox {...args} />

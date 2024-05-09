@@ -9,18 +9,18 @@ export default {
       defaultValue: 320,
       description: '横幅',
       table: {
-        type: { summary: 'number' }
-      }
+        type: { summary: 'number' },
+      },
     },
     height: {
       control: { type: 'number' },
       description: '縦幅',
       defaultValue: 320,
       table: {
-        type: { summary: 'number' }
-      }
-    }
-  }
+        type: { summary: 'number' },
+      },
+    },
+  },
 } as Meta<typeof RectLoader>
 
 const Template: StoryFn<typeof RectLoader> = (args) => <RectLoader {...args} />
