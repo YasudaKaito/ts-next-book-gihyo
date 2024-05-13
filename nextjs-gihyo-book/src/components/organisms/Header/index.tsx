@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import styled from 'styled-components'
 import AppLogo from 'components/atoms/AppLogo'
-import Button from 'components/atoms/Button'
+// import Button from 'components/atoms/Button'
 import {
   SearchIcon,
   PersonIcon,
@@ -9,7 +9,7 @@ import {
 } from 'components/atoms/IconButton'
 import ShapeImage from 'components/atoms/ShapeImage'
 import Spinner from 'components/atoms/Spinner'
-import Text from 'components/atoms/Text'
+// import Text from 'components/atoms/Text'
 import Box from 'components/layout/Box'
 import Flex from 'components/layout/Flex'
 import BadgeIconButton from 'components/molecules/BadgeIconButton'
@@ -36,12 +36,12 @@ const NavLink = styled.span`
 `
 
 // アンカー
-const Anchor = styled(Text)`
-  cursor: pointer;
-  &:hover {
-    text-decoration: underline;
-  }
-`
+// const Anchor = styled(Text)`
+//   cursor: pointer;
+//   &:hover {
+//     text-decoration: underline;
+//   }
+// `
 
 const Header = () => {
   const { cart } = useShoppingCartContext()
@@ -53,36 +53,34 @@ const Header = () => {
         <Nav as="nav" height="56px" alignItems="center">
           <NavLink>
             <Link href="/" passHref>
-              <Anchor as="a">
-                <AppLogo />
-              </Anchor>
+              <AppLogo />
             </Link>
           </NavLink>
           <NavLink>
             <Box display={{ base: 'none', md: 'block' }}>
               <Link href="/search" passHref>
-                <Anchor as="a">すべて</Anchor>
+                すべて
               </Link>
             </Box>
           </NavLink>
           <NavLink>
             <Box display={{ base: 'none', md: 'block' }}>
               <Link href="/search/clothes" passHref>
-                <Anchor as="a">トップス</Anchor>
+                トップス
               </Link>
             </Box>
           </NavLink>
           <NavLink>
             <Box display={{ base: 'none', md: 'block' }}>
               <Link href="/search/book" passHref>
-                <Anchor as="a">本</Anchor>
+                本
               </Link>
             </Box>
           </NavLink>
           <NavLink>
             <Box display={{ base: 'none', md: 'block' }}>
               <Link href="/search/shoes" passHref>
-                <Anchor as="a">シューズ</Anchor>
+                シューズ
               </Link>
             </Box>
           </NavLink>
@@ -91,22 +89,18 @@ const Header = () => {
           <NavLink>
             <Box display={{ base: 'block', md: 'none' }}>
               <Link href="/search" passHref>
-                <Anchor as="a">
-                  <SearchIcon />
-                </Anchor>
+                <SearchIcon />
               </Link>
             </Box>
           </NavLink>
           <NavLink>
             <Link href="/cart" passHref>
-              <Anchor as="a">
-                <BadgeIconButton
-                  icon={<ShoppingCartIcon size={24} />}
-                  size="24px"
-                  badgeContent={cart.length === 0 ? undefined : cart.length}
-                  badgeBackgroundColor="primary"
-                />
-              </Anchor>
+              <BadgeIconButton
+                icon={<ShoppingCartIcon size={24} />}
+                size="24px"
+                badgeContent={cart.length === 0 ? undefined : cart.length}
+                badgeBackgroundColor="primary"
+              />
             </Link>
           </NavLink>
           <NavLink>
@@ -115,16 +109,14 @@ const Header = () => {
               if (authUser) {
                 return (
                   <Link href={`/users/${authUser.id}`} passHref>
-                    <Anchor as="a">
-                      <ShapeImage
-                        shape="circle"
-                        src={authUser.profileImageUrl}
-                        width={24}
-                        height={24}
-                        data-testid="profile-shape-image"
-                        alt="プロフィール画像"
-                      />
-                    </Anchor>
+                    <ShapeImage
+                      shape="circle"
+                      src={authUser.profileImageUrl}
+                      width={24}
+                      height={24}
+                      data-testid="profile-shape-image"
+                      alt="プロフィール画像"
+                    />
                   </Link>
                 )
               } else if (isLoading) {
@@ -134,9 +126,7 @@ const Header = () => {
                 // サインインしてない場合はアイコンを表示
                 return (
                   <Link href="/signin" passHref>
-                    <Anchor as="a">
-                      <PersonIcon size={24} />
-                    </Anchor>
+                    <PersonIcon size={24} />
                   </Link>
                 )
               }
@@ -144,7 +134,7 @@ const Header = () => {
           </NavLink>
           <NavLink>
             <Link href="/sell" passHref>
-              <Button as="a">出品</Button>
+              出品
             </Link>
           </NavLink>
         </Nav>
