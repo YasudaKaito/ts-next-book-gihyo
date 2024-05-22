@@ -24,8 +24,7 @@ const HeaderRoot = styled.header`
 `
 
 // ナビゲーション
-const Nav = styled(Flex)<{ $alignItems?: 'center' }>`
-  align-items: ${({ $alignItems }) => $alignItems};
+const Nav = styled(Flex)`
   & > span:not(:first-child) {
     margin-left: ${({ theme }) => theme.space[2]};
   }
@@ -50,8 +49,8 @@ const Header = () => {
 
   return (
     <HeaderRoot>
-      <Flex $paddingLeft={3} $paddingRight={3} $justifyContent="space-between">
-        <Nav as="nav" height="56px" $alignItems="center">
+      <Flex paddingLeft={3} paddingRight={3} justifyContent="space-between">
+        <Nav as="nav" height="56px" alignItems="center">
           <NavLink>
             <Link href="/" passHref>
               <AppLogo />
@@ -86,7 +85,7 @@ const Header = () => {
             </Box>
           </NavLink>
         </Nav>
-        <Nav as="nav" height="56px" $alignItems="center">
+        <Nav as="nav" height="56px" alignItems="center">
           <NavLink>
             <Box display={{ base: 'block', md: 'none' }}>
               <Link href="/search" passHref>
